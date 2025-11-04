@@ -1,6 +1,6 @@
 local M = {}
 
--- @class EzSwitchConfig
+---@class EzSwitchOptions
 M.defaults = {}
 
 return M

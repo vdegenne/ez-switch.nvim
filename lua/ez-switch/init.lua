@@ -1,8 +1,8 @@
 local M = {}
 
---@param EzSwitchConfig opts
-function M.config(opts)
-	require("ez-switch.config").config(opts)
+---@param opts EzSwitchOptions?
+function M.setup(opts)
+	require("ez-switch.config").setup(opts)
 end
 
 function M.focus_sorted_nth_buffer(n)
@@ -36,7 +36,7 @@ function M.switch_on_double_tab()
 		-- vim.cmd("stopinsert")
 		print("NOICE")
 	else
-		tab_timer:start(200, 0, function() end)
+		tab_timer:start(500, 0, function() end)
 		return "<Tab>"
 	end
 	-- local now = vim.loop.hrtime() / 1e6
