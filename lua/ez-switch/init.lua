@@ -5,6 +5,6 @@ function M.hello()
 	print("Hello from easy-switch.nvim!")
 end
 
-print("YEAH!")
+print("test")
 
 return M
