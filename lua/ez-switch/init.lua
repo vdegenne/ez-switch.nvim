@@ -40,6 +40,8 @@ function M.switch()
 	end
 end
 
-vim.keymap.set("n", "<Tab>", M.switch, { noremap = true, silent = true, desc = "Switch buffer on double <Tab>" })
+vim.keymap.set("n", "<Tab>", function()
+	M.switch()
+end, { noremap = true, silent = true, desc = "Switch buffer on double <Tab>" })
 
 return M
