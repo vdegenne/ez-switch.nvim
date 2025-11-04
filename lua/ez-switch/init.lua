@@ -33,20 +33,11 @@ function M.switch_on_double_tab()
 	tab_timer = tab_timer or (vim.uv or vim.loop).new_timer()
 	if tab_timer:is_active() then
 		tab_timer:stop()
-		-- vim.cmd("stopinsert")
-		print("NOICE")
+		M.focus_sorted_nth_buffer(2)
 	else
 		tab_timer:start(500, 0, function() end)
 		return "<Tab>"
 	end
-	-- local now = vim.loop.hrtime() / 1e6
-	-- if now - last_tab_time < tab_timeout then
-	-- 	M.focus_sorted_nth_buffer(2)
-	-- 	-- vim.cmd("b#") -- switch to last used buffer
-	-- 	last_tab_time = 0
-	-- else
-	-- 	last_tab_time = now
-	-- end
 end
 
 return M
