@@ -7,6 +7,9 @@ Use double `<Tab>` tap to switch to previous open buffer.
 ```lua
 return {
   "vdegenne/ez-switch.nvim",
+  config = function()
+    require("ez-switch").setup()
+  end,
 }
 ```
 
