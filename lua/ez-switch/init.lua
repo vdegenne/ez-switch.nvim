@@ -29,7 +29,7 @@ end
 
 local tab_timer
 
-function M.switch_on_double_tab()
+function M.switch()
 	tab_timer = tab_timer or (vim.uv or vim.loop).new_timer()
 	if tab_timer:is_active() then
 		tab_timer:stop()
@@ -39,5 +39,7 @@ function M.switch_on_double_tab()
 		return "<Tab>"
 	end
 end
+
+vim.keymap.set("n", "<Tab>", M.switch, { noremap = true, silent = true, desc = "Switch buffer on double <Tab>" })
 
 return M
